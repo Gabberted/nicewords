@@ -6,10 +6,10 @@ import urllib.request
 
 
 page = urllib.request.urlopen('https://www.affirmations.dev/')
-page.read()
+text=page.read()
 
 
-print(page.text)
+print(text)
 
-decodedstring=str.decode('base64',page.text)
+decodedstring=str.decode('base64',text)
 print(decodedstring) 
