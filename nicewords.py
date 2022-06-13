@@ -13,7 +13,8 @@ text = btext.decode('utf-8')
 text=text.replace("{","").replace("b'","").replace("}","").replace('"','').replace("'","''")
 print(str(text))
 sp_Text=text.split(":")
-strQ=f"select count(*) from  nicewords where type='%s' and line='%s'"
+#strQ=f"select count(*) from  nicewords where type='%s' and line='%s'"
+strQ=f"select count(*) from  nicewords where type='{sp_Text[0]}' and line='{sp_Text[1]}'"
 print(strQ)
 cursor=db.getCursor()
 cursor.execute(strQ,sp_Text[0],sp_Text[1])
