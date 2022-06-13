@@ -18,7 +18,7 @@ strQ=f"select count(*) from  nicewords where type='{sp_Text[0]}' and line='{sp_T
 print(strQ)
 cursor=db.getCursor()
 cursor.execute(strQ)
-print("strCount: {strCount}")
+print(f"strCount: {strCount}")
 if strCount == "0":
     print("Entry not found, storing")
     strQ=f"insert into nicewords(type,line)values('{sp_Text[0]}','{sp_Text[1]}')"
