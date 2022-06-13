@@ -22,10 +22,13 @@ if strCount == "":
     print("Entry not found, storing")
     strQ=f"insert into nicewords(type,line)values('{sp_Text[0]}','{sp_Text[1]}')"
     print(strQ)
-    cursor=db.getCursor()
-    cursor.execute(strQ)
-    cursor.close()
-    print("Entry stored")
+    try:
+        cursor=db.getCursor()
+        cursor.execute(strQ)
+        cursor.close()
+        print("Entry stored")
+    catch Exception as ex:
+        print(f"Error: {ex}")
 else:
     print(f"{sp_Text[1]} already stored, skipping")
 
