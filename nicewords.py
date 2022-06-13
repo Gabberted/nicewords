@@ -15,7 +15,7 @@ print(str(text))
 sp_Text=text.split(":")
 #strQ=f"select count(*) from  nicewords where type='%s' and line='%s'"
 strQ=f"select count(*) from  nicewords where type='{sp_Text[0]}' and line='{sp_Text[1]}'"
-
+print(str(db.returnFetchall(strQ)[0]))
 strCount=str(db.returnFetchall(strQ)[0]).replace("(","").replace(")","").split(",")[1]
 print(f"strCount: {strCount}")
 if strCount == "":
