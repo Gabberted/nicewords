@@ -19,7 +19,7 @@ print(strQ)
 
 strCount=str(db.returnFetchall(strQ)[0]).replace("(","").replace(")","").split(",")[1]
 print(f"strCount: {strCount}")
-if strCount == "0":
+if strCount == "":
     print("Entry not found, storing")
     strQ=f"insert into nicewords(type,line)values('{sp_Text[0]}','{sp_Text[1]}')"
     db.NoReturnQuery(strQ)
