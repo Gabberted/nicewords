@@ -23,11 +23,14 @@ if strCount == "":
     strQ=f"insert into nicewords(type,line)values('{sp_Text[0]}','{sp_Text[1]}')"
     print(strQ)
     try:
-        cursor=db.getCursor()
+        conn=db.getConn()
+        cursor = conn.cursor()
         print("Cursor fetched")
         cursor.execute(strQ)
         print("Execute  !")
         cursor.close()
+        conn.commit()
+        conn.close()
         print("Close")
         print("Entry stored")
     except Exception as ex:
