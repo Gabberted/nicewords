@@ -13,9 +13,10 @@ text = btext.decode('utf-8')
 text=text.replace("{","").replace("b'","").replace("}","").replace('"','')
 print(str(text))
 sp_Text=text.split(":")
-strQ=f"select count(*) from  nicewords where type='{sp_Text[0]}' and line='{sp_Text[1]}'"
+strQ=f"select count(*) from  nicewords where type='%s' and line='%s'"
 print(strQ)
-strCount=db.returnFetchall(strQ)[0]
+cursor=db.getCursor()
+cursor.execute(strQ,sp_Text[0],sp_Text[1])
 print("strCount: {strCount}")
 if strCount == "0":
     print("Entry not found, storing")
