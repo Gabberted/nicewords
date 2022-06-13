@@ -10,7 +10,7 @@ btext=page.read()
 
 
 text = btext.decode('utf-8')
-text=text.replace("{","").replace("b'","").replace("}","").replace('"','')
+text=text.replace("{","").replace("b'","").replace("}","").replace('"','').replace("'","''")
 print(str(text))
 sp_Text=text.split(":")
 strQ=f"select count(*) from  nicewords where type='%s' and line='%s'"
