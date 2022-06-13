@@ -9,7 +9,7 @@ page = urllib.request.urlopen('https://www.affirmations.dev/')
 text=page.read()
 
 
-print(text)
+print(str(text))
 
 decodedstring=base64.b64decode(text).decode('utf-8')
 print(decodedstring) 
