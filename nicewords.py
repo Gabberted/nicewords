@@ -16,8 +16,8 @@ sp_Text=text.split(":")
 #strQ=f"select count(*) from  nicewords where type='%s' and line='%s'"
 strQ=f"select count(*) from  nicewords where type='{sp_Text[0]}' and line='{sp_Text[1]}'"
 print(strQ)
-cursor=db.getCursor()
-cursor.execute(strQ)
+
+strCount=db.returnFetchall(strQ)[0]
 print(f"strCount: {strCount}")
 if strCount == "0":
     print("Entry not found, storing")
