@@ -27,7 +27,7 @@ if strCount == "":
         cursor.execute(strQ)
         cursor.close()
         print("Entry stored")
-    catch Exception as ex:
+    except Exception as ex:
         print(f"Error: {ex}")
 else:
     print(f"{sp_Text[1]} already stored, skipping")
