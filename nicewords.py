@@ -11,5 +11,5 @@ text=page.read()
 
 print(str(text))
 
-decodedstring=base64.b64decode(text).decode('utf-8')
-print(decodedstring) 
+#decodedstring=base64.b64decode(text).decode('utf-8')
+#print(decodedstring) 
