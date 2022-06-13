@@ -24,8 +24,11 @@ if strCount == "":
     print(strQ)
     try:
         cursor=db.getCursor()
+        print("Cursor fetched")
         cursor.execute(strQ)
+        print("Execute  !")
         cursor.close()
+        print("Close")
         print("Entry stored")
     except Exception as ex:
         print(f"Error: {ex}")
