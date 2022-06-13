@@ -1,4 +1,4 @@
-include ../../FrameWorks/dbConn as db
+include ..FrameWorks/dbConn as db
 
 
 print("Test")
