@@ -16,9 +16,9 @@ sp_Text=text.split(":")
 #strQ=f"select count(*) from  nicewords where type='%s' and line='%s'"
 strQ=f"select count(*) from  nicewords where type='{sp_Text[0]}' and line='{sp_Text[1]}'"
 print(str(db.returnFetchall(strQ)[0]))
-strCount=str(db.returnFetchall(strQ)[0]).replace("(","").replace(")","").split(",")[1]
+strCount=str(db.returnFetchall(strQ)[0]).replace("(","").replace(")","").split(",")[0]
 print(f"strCount: {strCount}")
-if strCount == "":
+if strCount == "0":
     print("Entry not found, storing")
     strQ=f"insert into nicewords(type,line)values('{sp_Text[0]}','{sp_Text[1]}')"
     print(strQ)
